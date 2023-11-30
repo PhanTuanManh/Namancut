@@ -1,5 +1,5 @@
 package CreationalDesignPatterns.AbstractFactory;
 
-public interface Phone {
-    void makeCall();
+interface Student {
+    String getDetails();
 }

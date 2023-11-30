@@ -2,10 +2,13 @@ package StructuralPatterns.Bridge;
 
 public class BridgeClient {
     public static void main(String[] args) {
-        Shape redCircle = new Circle(new RedColor());
-        Shape greenSquare = new Square(new GreenColor());
+        StudentType undergraduateType = new Undergraduate();
+        StudentType postgraduateType = new Postgraduate();
 
-        redCircle.draw();
-        greenSquare.draw();
+        StudentAbstraction regularStudent = new RegularStudent(undergraduateType);
+        StudentAbstraction exchangeStudent = new ExchangeStudent(postgraduateType);
+
+        regularStudent.showDetails();
+        exchangeStudent.showDetails();
     }
 }

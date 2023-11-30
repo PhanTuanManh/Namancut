@@ -2,25 +2,22 @@ package StructuralPatterns.Composite;
 
 public class CompositeClient {
     public static void main(String[] args) {
-        File file1 = new File("file1.txt");
-        File file2 = new File("file2.txt");
+        // Tạo đối tượng sinh viên
+        StudentComponent student1 = new StudentLeaf("John Doe");
+        StudentComponent student2 = new StudentLeaf("Jane Smith");
 
-        Directory directory1 = new Directory("Folder 1");
-        directory1.addComponent(file1);
-        directory1.addComponent(file2);
+        // Tạo đối tượng nhóm
+        GroupComposite group1 = new GroupComposite("Group 1");
+        group1.addMember(student1);
+        group1.addMember(student2);
 
-        File file3 = new File("file3.txt");
-        File file4 = new File("file4.txt");
+        // Hiển thị thông tin sinh viên và nhóm
+        student1.displayDetails();
+        System.out.println();
 
-        Directory directory2 = new Directory("Folder 2");
-        directory2.addComponent(file3);
-        directory2.addComponent(file4);
+        student2.displayDetails();
+        System.out.println();
 
-        Directory rootDirectory = new Directory("Root");
-        rootDirectory.addComponent(directory1);
-        rootDirectory.addComponent(directory2);
-
-        // Show properties of the entire file system
-        rootDirectory.showProperties();
+        group1.displayDetails();
     }
 }

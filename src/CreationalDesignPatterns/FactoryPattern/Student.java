@@ -1,5 +1,5 @@
 package CreationalDesignPatterns.FactoryPattern;
 
-public interface Animal {
-    void makeSound();
+interface Student {
+    String getDetails();
 }
